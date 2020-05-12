@@ -1,0 +1,26 @@
+language: node_js
+
+sudo: required
+
+node_js:
+- 10.14.0
+
+services:
+- docker
+
+before_script:
+- echo "Before Executed"
+- chmod 755 ./travisDockerBuild.sh
+- chmod 755 ./shell/*.sh
+
+install:
+- echo "Install"
+
+script: true
+#  - go test ./cmd/bluepay-report-server/
+
+after_success:
+- ./travisDockerBuild.sh
+
+notifications:
+  slack: ibm-cio:Ll6gcxWaILLndlIMbaRpfclx

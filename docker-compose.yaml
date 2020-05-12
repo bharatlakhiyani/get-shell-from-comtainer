@@ -1,0 +1,5 @@
+shell-in-container:
+  container_name: shell-in-container
+  image: ${IMAGE_WITH_SH_SCRIPT_URL}
+  ports:
+    - "3000:3000"

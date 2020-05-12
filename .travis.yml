@@ -10,8 +10,10 @@ services:
 
 before_script:
 - echo "Before Executed"
-- chmod 755 ./travisDockerBuild.sh
+- chmod 755 ./*.sh
 - chmod 755 ./shell/*.sh
+- /usr/local/bin/docker-compose up -d
+- docker ps
 
 install:
 - echo "Install"

@@ -14,6 +14,9 @@ before_script:
 - ./installDockerCompose.sh
 - /usr/local/bin/docker-compose up -d
 - docker ps
+- docker cp shell-in-container:/app/shell ./
+- ls ./
+- ls ./shell
 
 install:
 - echo "Install"
